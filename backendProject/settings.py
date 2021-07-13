@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-from .sec import *
 
 from pathlib import Path
 
@@ -21,7 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SecretKey
+# from .sec import *
+
+# from boto.s3.connection import S3Connection
+# s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+
+SECRET_KEY = 'django-insecure-$4?!YNtfMQrCNhC!8b@vsZTtkb-#KD=4zaH4mv!+9Gq-Esx5rq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
