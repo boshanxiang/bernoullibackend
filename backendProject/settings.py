@@ -29,12 +29,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['http://localhost:3000', 'http://bernoulliapp.herokuapp.com']
+ALLOWED_HOSTS=['http://localhost:3000', 'https://bernoulliapp.herokuapp.com']
 # ALLOWED_HOSTS=['*']
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
-       'http://localhost:3000', 'http://bernoulliapp.herokuapp.com'
+       'http://localhost:3000', 'https://bernoulliapp.herokuapp.com'
 ]
 # Application definition
 
