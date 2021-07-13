@@ -12,6 +12,7 @@ gunicorn = "*"
 django-heroku = "*"
 django-cors-headers = "*"
 python-decouple = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

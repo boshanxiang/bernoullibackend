@@ -22,9 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # Old key disabled
 
-from decouple import config
+import os
+from dotenv import load_dotenv
 
-SECRET_KEY = config('SECRET_KEY') or process.env.SECRET_KEY
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
