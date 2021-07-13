@@ -20,19 +20,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# from .sec import *
 
-# from boto.s3.connection import S3Connection
-# s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+from decouple import config
 
-SECRET_KEY = 'django-insecure-$4?!YNtfMQrCNhC!8b@vsZTtkb-#KD=4zaH4mv!+9Gq-Esx5rq'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['http://localhost:3000', 'http://bernoulliapp.herokuapp.com']
+# ALLOWED_HOSTS=['*']
 
-
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = [
+       'http://localhost:3000', 'http://bernoulliapp.herokuapp.com'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,9 +47,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'backendAPI',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,6 +145,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+               
+
 
 
 # Configure Django App for Heroku.

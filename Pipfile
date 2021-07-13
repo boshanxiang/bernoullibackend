@@ -10,6 +10,8 @@ django-extensions = "*"
 djangorestframework = "*"
 gunicorn = "*"
 django-heroku = "*"
+django-cors-headers = "*"
+decouple = "*"
 
 [dev-packages]
 
