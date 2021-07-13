@@ -11,7 +11,7 @@ djangorestframework = "*"
 gunicorn = "*"
 django-heroku = "*"
 django-cors-headers = "*"
-decouple = "*"
+python-decouple = "*"
 
 [dev-packages]
 
